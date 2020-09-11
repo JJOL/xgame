@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XGame"
+             x:Class="XGame.MainPage">
+    <Grid BackgroundColor="Green" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        
+        <!-- Canvas -->
+        <AbsoluteLayout x:Name="Canvas" 
+                        Grid.Row="0" Grid.ColumnSpan="5" 
+                        BackgroundColor="Aqua"
+                        SizeChanged="Canvas_Size_Changed">
+            <Label 
+                x:Name="PointsLabel"
+                AbsoluteLayout.LayoutBounds="0,0,100,60"
+                Text="Points: 0"
+                FontSize="Large"
+                TextColor="Black"></Label>
+            <Image
+                x:Name="PlayerBox"
+                WidthRequest="30" HeightRequest="30"
+                Source="{local:ImageResource XGame.Images.pac.png}"
+                AbsoluteLayout.LayoutBounds="0,0,30,30" />
+            <Image
+                x:Name="EnemyBox1"
+                WidthRequest="30" HeightRequest="30"
+                Source="{local:ImageResource XGame.Images.f1.png}"
+                AbsoluteLayout.LayoutBounds="0,0,30,30" />
+            <Image
+                x:Name="EnemyBox2"
+                WidthRequest="30" HeightRequest="30"
+                Source="{local:ImageResource XGame.Images.f2.png}"
+                AbsoluteLayout.LayoutBounds="0,0,30,30" />
+            <Image
+                x:Name="EnemyBox3"
+                WidthRequest="30" HeightRequest="30"
+                Source="{local:ImageResource XGame.Images.f3.png}"
+                AbsoluteLayout.LayoutBounds="0,0,30,30" />
+            <Image
+                x:Name="EnemyBox4"
+                WidthRequest="30" HeightRequest="30"
+                Source="{local:ImageResource XGame.Images.f4.png}"
+                AbsoluteLayout.LayoutBounds="0,0,30,30" />
+            <Image
+                x:Name="EnemyBox5"
+                WidthRequest="30" HeightRequest="30"
+                Source="{local:ImageResource XGame.Images.f5.png}"
+                AbsoluteLayout.LayoutBounds="0,0,30,30" />
+
+        </AbsoluteLayout>
+
+        <!-- GamePad -->
+        <Button Text="Left" Clicked="Left_Clicked"
+                    Grid.Row="1" Grid.Column="0"></Button>
+        <Button Text="Up" Clicked="Up_Clicked"
+                    Grid.Row="1" Grid.Column="1"></Button>
+        <Button Text="Shrink" Clicked="Size_Clicked"
+                    Grid.Row="1" Grid.Column="2"></Button>
+        <Button Text="Down" Clicked="Down_Clicked"
+                    Grid.Row="1" Grid.Column="3"></Button>
+        <Button Text="Right" Clicked="Right_Clicked"
+                    Grid.Row="1" Grid.Column="4"></Button>
+    </Grid>
+</ContentPage>
